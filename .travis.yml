@@ -1,7 +1,10 @@
 language: java
 sudo: false
 install: true
-script: mvn clean install
+script:
+- mvn clean package
+- bash buildPushDockerImage.sh
+
 cache:
   directories:
   - $HOME/.m2
